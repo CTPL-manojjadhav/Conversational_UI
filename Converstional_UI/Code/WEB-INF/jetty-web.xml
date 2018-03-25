@@ -4,7 +4,7 @@
 	<Set name="contextPath">/lima</Set>
 	<Set name="resourceBase">
 		<SystemProperty name="java.io.tmpdir" />
-		/jetty-0.0.0.0-8080-lima.war-_lima-any-/webapp/res/html/
+		/jetty-0.0.0.0-8080-hmi.war-_hmi-any-/webapp/res/html/
 	</Set>
 	<!-- javax.servlet.context.tempdir -->
 </Configure>
