@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Next Generation Customer Engagement</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <!--link rel="stylesheet" href="css/BootSideMenu.css"-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="16x16" />
+
+</head>
+
+<body>
+    <!-- ------------------ Login Screen Start ------------------ -->
+    <div id="login-wrapper" class="">
+        <div class=" vertical-center">
+            <div class="col-xs-12 col-md-5">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-body">
+                        <div class="toggle" title="Change IP"><i class="fa fa-times fa-pencil"> IP</i> </div>
+                        <div class="col-xs-12 col-md-8 col-md-offset-2">
+                            <h2 class="pg-title">Login to your account</h2>
+                            <form role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="input">
+                                            <input class="form-control validate" id="username" type="text" placeholder="Username" value="John" required>
+                                            <span style="opacity: 1;"><i class="fa fa-user"></i></span> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input">
+                                            <input class="form-control validate" id="password" type="password" placeholder="Password" value="John123" required>
+                                            <span style="opacity: 1;"><i class="fa fa-lock"></i></span> </div>
+                                    </div>
+                                    <div class="form-group ip-adress">
+                                        <div class="input">
+                                            <input class="form-control" id="ip" type="text" value="http://35.154.101.154:8080" required>
+                                            <span style="opacity: 1;"><i class="fa fa-file-o"></i></span> </div>
+                                    </div>
+                                    <a href="#." id="login" class="btn btn-lg button-primary btn-block">Login</a>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------Login End---------------- -->
+    <!-- Page Loader -->
+    <div id="loading"> <img id="loading-image" src="img/page-loader.gif" alt="Loading..." /> </div>
+    <!-- small loader -->
+    <div id="loading-small"> <img id="loading-image" src="img/loader.gif" alt="Loading..." /> </div>
+
+    <!-- ------------------ Sidebar Start ------------------ -->
+    
+    <!-- ------------------ Sidebar End ------------------ -->
+    <!-- Modal -->
+    
+    <!--- -------Show Modal window to select Avatar End ----------------- -->
+
+
+    <!-- Chat Wrapper Start -->
+    <div class="chat-wrapper ">
+
+        <div id="error"></div>
+        <!-- Header Start -->
+        <div id="header">
+
+            <div class="panel-heading">
+                <div class="col-xs-2 col-md-1 nessa-logo"><img src="img/bot-logo.png" class="" alt="" /></div>
+                <div class="col-xs-10 col-md-10 padding-left-0">
+                    <h3 class="panel-title padding-left-0">Chat with HMI BOT</h3>
+                    <h5>Your Next Generation Customer Care Agent</h5>
+                </div>
+
+            </div>
+        </div>
+        <!-- Header End -->
+        
+        
+         <div id="start-button-holder">
+                        <a href="#" id="start-btn" class="startChat button-primary">
+                            <span>Begin Here..</span>
+                        </a>
+                    </div>
+                    
+        <!-- Content Start -->
+        <div id="content" class="parent-scroll">
+           
+            <div id="chat-body" class="collapse in child-scroll ">
+               
+                <!--div class="nano-container"-->
+                    <div class="nano has-scrollbar">
+                        <div class="nano-content pad-all" tabindex="0" style="right: -17px;">
+
+                            <ul class="list-unstyled media-block" id="utterance"></ul>
+                        </div>
+                        <div class="nano-pane">
+                            <div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div>
+                        </div>
+                        <div id="scrollBtm"></div>
+                    </div>
+                   
+                    
+
+                    <!--div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <textarea id="userUtterance" placeholder="Type your message" class="form-control"></textarea>
+                            </div>
+                            <div class="col-xs-4 btn-send-col">
+                                <div id="loader"></div>
+                                <button id="recobtn"> <img id="start_img" src="img/mic.gif" alt="Start"> </button>
+                                &nbsp;&nbsp;
+                                <div id="btnSubmit" class="btn-send"></div>
+                                &nbsp;&nbsp;&nbsp; </div>
+                        </div>
+                    </div-->
+                   
+                <!--/div-->
+                <div id="bottom">
+                        <div id="info">
+                            <p id="info_start">Click on the MIC icon and speak</p>
+                            <p id="info_speak_now">Speak Now</p>
+                            <p id="info_no_speech">No speech detected. You may need to adjust your <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892"> microphone settings</a>.</p>
+                            <p id="info_no_microphone" style="display:none"> No microphone was found. Please Ensure that a microphone is installed and that <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892"> microphone settings</a> are configured correctly.</p>
+                            <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+                            <p id="info_denied">Permission to use microphone was denied.</p>
+                            <p id="info_blocked">Permission to use microphone is blocked. To change, go to chrome://settings/contentExceptions#media-stream</p>
+                            <p id="info_upgrade">Web Speech API is not supported by this browser. Upgrade to <a href="//www.google.com/chrome">Chrome</a> version 25 or later.</p>
+                        </div>
+                    </div>
+            </div>
+           
+            <!-- Content End -->
+               <div class="clearfix"></div>
+             </div>
+              <div id="debug" class="box"></div>
+               <!-- Footer Start -->
+        <div id="footer">
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <textarea id="userUtterance" placeholder="Type your message" class="form-control"></textarea>
+                    </div>
+                    <div class="col-xs-4 btn-send-col">
+                        <div id="loader"></div>
+                        <button id="recobtn"> <img id="start_img" src="img/mic.gif" alt="Start"> </button>
+                        &nbsp;&nbsp;
+                        <div id="btnSubmit" class="btn-send"></div>
+                        &nbsp;&nbsp;&nbsp; </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+            
+        </div>
+        <div class="clearfix"></div>
+        <!-- Chat Wrapper End -->
+       
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/master.js"></script>
+        <script src="js/sidebar.js"></script>
+ </body>
+
+</html>

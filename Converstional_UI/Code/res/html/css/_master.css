@@ -1,0 +1,807 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* =============================================================================
+   Reset CSS 
+   ========================================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	margin: 0;
+	padding: 0;/*height: 100%;*/
+    /*min-height: 100%;*/
+    /*  position: relative;*/
+}
+body {
+	background: #EBF8FF;
+	transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #333;/*  margin-bottom: 60px;*/
+}
+/*body > .container {
+  padding: 60px 15px 0;
+}*/
+
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+p {
+	/*margin: 0;*/
+	padding: 0;
+	display: block;
+}
+img {
+	/* Responsive images (ensure images don't scale beyond their parents) */
+	max-width: 100%;
+	/* Part 1: Set a maxium relative to the parent */
+	width: auto\9;
+	/* IE7-8 need help adjusting responsive images */
+	height: auto;
+	/* Part 2: Scale the height according to the width, otherwise you get stretching */
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+.clearfix {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	height: auto;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	outline: none;
+	color: #0755B8;
+	text-decoration: none;
+}
+a:hover {
+	color: #0A74F5;
+	text-decoration: underline;
+}
+
+::-moz-selection {
+ color: #487c95;
+ background: #cdeef3;
+}
+::selection {
+	color: #487c95;
+	background: #cdeef3;
+}
+/* =============================================================================
+   Global CSS 
+   ========================================================================== */
+
+#header, #content, #footer {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+}
+#header {
+	height: 75px;
+	overflow: hidden;
+	background: #f1f1f1;
+	top: 0px;
+}
+#content {
+	top: 75px;
+	bottom: 75px;
+	overflow: auto;
+}
+#content {
+	background: #fff;/* padding: 60px 0;*/
+}
+.chat-wrapper .panel {
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.075);
+	border-radius: 0;
+	border: 0;
+	margin-bottom: 0;
+}
+.chat-wrapper .panel .panel-heading, .chat-wrapper .panel>:first-child {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.chat-wrapper .panel-heading {
+	position: relative;
+	min-height: 70px;
+	padding: 0;
+	border-bottom: 1px solid rgb(63, 152, 232);
+	background: rgb(94, 175, 249);
+	color: #fff;
+}
+.chat-wrapper .panel-control {
+	height: 100%;
+	position: relative;
+	float: right;
+	padding: 0 15px;
+}
+.chat-wrapper .panel-title {
+	font-weight: normal;
+	padding: 0 20px 0 0;
+	font-size: 1.416em;
+	line-height: 50px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.chat-wrapper .panel-control>.btn:last-child, .chat-wrapper .panel-control>.btn-group:last-child>.btn:first-child {
+	border-bottom-right-radius: 0;
+}
+.chat-wrapper .panel-control .btn, .chat-wrapper .panel-control .dropdown-toggle.btn {
+	border: 0;
+}
+.nano {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.nano>.nano-content {
+/* position: absolute;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;*/
+}
+.pad-all {
+	padding: 15px;
+}
+.mar-btm {
+	margin-bottom: 15px;
+}
+.media-block .media-left {
+	display: block;
+	float: left;
+}
+.img-sm {
+	width: 46px;
+	height: 46px;
+}
+.media-block .media-body {
+	display: block;
+	overflow: visible;
+	width: auto;
+	float: left;
+	/* padding: 60px 0 0 0;*/
+	min-width: 60%;
+}
+.pad-hor {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.speech {
+	position: relative;
+	background: #f5f5f5;
+	color: #317787;
+	display: inline-block;
+	border-radius: 0;
+	padding: 12px 20px;
+	border-radius: 6px;
+	min-width: 60%;
+}
+.speech:before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 0;
+	top: 0;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-right: 7px solid #f5f5f5;
+	margin: 15px 0 0 -6px;
+}
+.speech-right>.speech:before {
+	left: auto;
+	right: 0;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-left: 7px solid rgb(199, 240, 186);
+	border-right: 0;
+	margin: 15px -6px 0 0;
+}
+.speech .media-heading {
+	font-size: 1.2em;
+	color: #317787;
+	display: block;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	font-weight: 300;
+}
+.speech-time {
+	/*  margin-top: 10px;*/
+	margin-bottom: 0;
+	font-size: .8em;
+	font-weight: 300;
+	float: right;
+}
+.speech-right>.speech .media-heading .speech-time {
+	float: left;
+}
+.media-block .media-right {
+	float: right;
+}
+.speech-right {
+	text-align: right;
+	float: right !important;
+}
+.pad-hor {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.speech-right>.speech {
+	background: rgba(112, 216, 78, 0.39);
+	color: #009524;
+	text-align: right;
+}
+.speech-right>.speech .media-heading {
+	color: #009524;
+}
+.btn-primary, .btn-primary:focus, .btn-hover-primary:hover, .btn-hover-primary:active, .btn-hover-primary.active, .btn.btn-active-primary:active, .btn.btn-active-primary.active, .dropdown.open>.btn.btn-active-primary, .btn-group.open .dropdown-toggle.btn.btn-active-primary {
+	background-color: #579ddb;
+	border-color: #5fa2dd;
+	color: #fff !important;
+}
+.btn {
+	cursor: pointer;
+	/* background-color: transparent; */
+	color: inherit;
+	padding: 6px 12px;
+	border-radius: 0;
+	border: 1px solid 0;
+	font-size: 11px;
+	line-height: 1.42857;
+	vertical-align: middle;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+}
+.form-control {
+	font-size: 11px;
+	height: 100%;
+	border-radius: 0;
+	box-shadow: none;
+	border: 1px solid #ccc;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+.nano>.nano-pane {
+	background-color: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	width: 5px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transition: all .7s;
+	transition: all .7s;
+}
+.nano-content li {
+	border-bottom: 1px dotted #ccc;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+.chat-wrapper .panel-heading .col-xs-4 img {
+	width: 100%;
+	max-width: 100%;
+}
+.padding-left-0 {
+	padding-left: 0;
+}
+.btn-send {
+	/*position: fixed;*/
+	position: relative;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 0;
+	background: rgb(94, 175, 249);
+	color: #ffffff;
+	bottom: 5%;
+	/*right: 10.66667px;*/
+	margin: 8px 0 0 0;
+	display: inline-block;
+}
+.btn-send:before {
+	content: '';
+	background: url(../img/icon_send.png) no-repeat center center;
+	background-size: 25.6px;
+	position: absolute;
+	top: 0;
+	left: 2px;
+	right: 0;
+	bottom: 0;
+}
+.btn-send:focus {
+	outline: none;
+}
+.btn-send:hover {
+	cursor: pointer;
+}
+.chat-wrapper .panel-footer textarea {
+	font-size: 14px;
+	line-height: 20px;
+}
+.chat-wrapper .panel-heading .col-xs-2.col-md-1 {
+	line-height: 68px;
+}
+.col-xs-2.microphone {
+	padding-left: 0;
+	padding-right: 0;
+}
+.chat-wrapper .panel-footer .fa.fa-microphone, .chat-wrapper .panel-footer .fa.fa-microphone-slash {
+	font-size: 1.625em;
+	position: relative;
+	top: -10px;
+	color: rgb(119, 119, 119);
+	cursor: pointer;
+}
+.chat-wrapper .panel-footer .col-xs-8 {
+	width: calc(100% - 100px);
+}
+.btn-send-col {
+	text-align: right;
+	width: 100px;
+}
+.btn-send-col.col-xs-4 {
+	padding-left: 0;
+	padding-right: 0;
+}
+/* =============================================================================
+   Footer CSS 
+   ========================================================================== */
+
+
+/*-------- Sticky footer styles--------------- */
+
+#footer {
+	bottom: 0px;
+	height: 75px;
+	overflow: hidden;
+}
+.footer-block {
+	margin: 20px 0;
+}
+.navbar-default {
+	background: none;
+	border: none;
+}
+/*---------------------- Custom Webkit Scroll CSS ---------------*/
+
+
+/*--------------- Chat Wrapper --------------------------*/
+
+.chat-wrapper {
+	box-shadow: 0 0 10px #CCC;
+	max-width: 1280px;
+}
+.chat-wrapper .panel-title {
+	padding-bottom: 0;
+	line-height: 28px;
+	padding-top: 10px;
+}
+
+::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+ background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+ width: 12px;
+ background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+ -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+ background-color: #555;
+}
+.lima-logo {
+	text-align: center;
+}
+.lima-logo img {
+	max-width: 60px;
+	width: 100%;
+	min-width: 46px;
+}
+/*------------ Loader ----------------------*/
+
+#loading, #loading-small, .overlay {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	display: none;
+	opacity: 0.7;
+	background-color: #fff;
+	z-index: 99;
+	text-align: center;
+}
+.overlay {
+	opacity: 0.5;
+}
+#loading-image {
+	position: absolute;
+	top: 43%;
+	left: 50%;
+	margin-left: -40px;
+	z-index: 100;
+}
+#loading-small {
+	width: 100%;
+	height: 76px;
+	top: inherit;
+	left: 0;
+	border-top: 1px solid #ddd;
+	bottom: 0;
+}
+#loading-small #loading-image {
+	top: 14px;
+	left: 48%;
+	width: 50px;
+	height: 50px;
+}
+#info {
+	display: none;
+	width: 70%;
+	height: 50%;
+	top: 22%;
+	left: 15%;
+	position: fixed;
+	display: none;
+	opacity: 0.95;
+	background-color: #fff;
+	z-index: 99;
+	text-align: center;
+	border-radius: 10px;
+	/*    border: 1px solid #ddd;*/
+	box-shadow: 0 0 8px #999;
+}
+#info p {
+	font-size: 20px;
+	text-align: center;
+	color: #666;
+	position: relative;
+	top: 40%;
+	padding: 4%;
+}
+#recobtn, #recobtn1 {
+	position: relative;
+	top: -17px;
+	width: 30px;
+	background: none;
+	border: 0;
+}
+
+
+
+/*
+ *  scrollbar styling
+ */
+
+#content::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 6px #fff;
+ background-color: #fff;
+}
+ #content::-webkit-scrollbar {
+ width: 0;
+ background-color: #F5F5F5;
+}
+ #content::-webkit-scrollbar-thumb {
+ background-color: #fff;
+}
+/* =============================================================================
+   Login CSS 
+   ========================================================================== */
+
+.vertical-center {
+	min-height: 100%;
+	/* Fallback for vh unit */
+	min-height: 100vh;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+#login-wrapper {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	display: block;
+	/*opacity: 0.7;*/
+	background-color: rgba(255, 255, 255, 0.05);
+	z-index: 999999;
+	text-align: center;
+}
+.login-panel {
+	text-align: left;
+}
+.login-panel .form-group {
+	margin-bottom: 23px;
+}
+.login-panel input.form-control {
+	height: 34px;
+	font-size: 1em;
+}
+.login-panel .btn-primary {
+	font-size: 1em;
+	background: #33b5e5;
+	border-bottom: 3px solid #2792B9;
+	margin-bottom: 10px;
+}
+.login-panel .btn-primary:hover {
+	border: 1px solid #2792B9;
+	border-bottom: 3px solid #2792B9;
+}
+.login-panel .btn-primary:active {
+	background: #33b5e5;
+	border-bottom: 5px solid #1384ad;
+}
+.login-panel h2.pg-title {
+	margin: 0 0 20px;
+	color: #33b5e5;
+	font-size: 1.45em;
+	font-weight: 400;
+	line-height: 1;
+}
+.login-panel .panel-body {
+	border-top: 5px solid #33b5e5;
+	box-shadow: 0 0 5px #7AC3DE;
+}
+.login-panel .toggle {
+	cursor: pointer;
+	position: absolute;
+	top: -0;
+	right: -0;
+	background: #33b5e5;
+	width: 35px;
+	height: 30px;
+	margin: 5px 16px 0 0;
+	color: #ffffff;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+}
+.input {
+	position: relative;
+	width: 100%;
+	margin: 15px auto;
+}
+.input span {
+	position: absolute;
+	display: block;
+	color: #33B5E5;
+	left: 10px;
+	top: 2px;
+	font-size: 20px;
+}
+.input input {
+	width: 100%;
+	padding: 10px 5px 10px 40px;
+	display: block;
+	border: 1px solid #ccc;
+	-webkit-transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
+}
+.input input:focus {
+	padding: 10px 5px 10px 10px;
+	outline: 0;
+}
+.help-block {
+	display: none;
+}
+.login-error input.form-control {
+	border: 1px solid #F97070;
+	box-shadow: 0px 1px 1px rgba(240, 91, 91, 0.1) inset, 0px 0px 8px rgba(231, 52, 23, 0.6);
+}
+/*.login-error .form-control:focus {
+    border-color: #F01616;
+    outline: 0px none;
+}*/
+.login-error .help-block {
+	display: block;
+	color: #f00;
+}
+/*--------------------- Side bar CSS Start Here-----------*/
+#sidebar {
+	display: none;
+}
+.sidebar {
+	z-index: 555;
+	position: fixed;
+	padding: 0px;
+	width: auto;
+	background-clip: padding-box;
+	box-shadow: 2px 0 16px -7px #888;
+	opacity: 0.95;
+	background-color: #EFEFEF;
+	top: 50%;
+	margin-top: -92px;
+	height: 180px;
+	border-radius: 0 8px 8px 0;
+	border: 1px solid #DDD;
+	border-left: 0;
+}
+.sidebar > .row > .col-xs-12, .sidebar > .row > .col-sm-12, .sidebar > .row > .col-md-12, .sidebar > .row > .col-lg-12 {
+	padding: 0px;
+	position: absolute;
+	bottom: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+.sidebar >.row {
+	margin: 0px;
+}
+.sidebar {
+	width: 80px;
+}
+.sidebar.sidebar-left {
+	left: 0px;/*right:20px;*/
+}
+.sidebar.sidebar-right {
+	right: 0px;
+	left: 20px;
+}
+.icon-holder ul {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0 0 0;
+}
+.icon-holder ul li {
+	display: block;
+	margin-bottom: 15px;
+}
+.icon-holder ul li a {
+	display: block;
+	color: #666;
+	text-align: center;
+	text-decoration: none;
+}
+.icon-holder ul li img {
+	margin-left: -2px;
+}
+.icon-holder ul li a span {
+	display: block;
+	font-size: 1em;
+	line-height: 1.4em;
+	text-align: center;
+	margin-top: 5px;
+}
+.toggler {
+	display: block !important;
+}
+.toggler {
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, .15);
+	width: 20px;
+	height: 48px;
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+	margin-top: -24px;
+}
+.toggler {
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	/*border-left: 1px solid #fff;*/
+    
+	border-left: 1px solid #DEDEDE;
+	box-shadow: 1px 0px 8px rgba(0, 0, 0, .175);
+	right: -20px;
+	background: #efefef;
+}
+.toggler > span {
+	margin: 15px 2px;
+}
+.toggler > .glyphicon-chevron-right {
+	display: block;
+}
+.sidebar .submenu {
+	display: block;
+	position: fixed;
+}
+/*Native BootStrap Hack*/
+.sidebar .list-group-item:last-child, .sidebar .list-group-item:first-child {
+	border-radius: 0px;
+}
+
+/*------------- Sidebar CSS End here ----------------------*/
+
+
+
+/*.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}*/
+
+
+
+#myModal .modal-body {
+    overflow:  hidden;
+}
+#myModal .modal-footer {
+    text-align:  left;
+}
+
+#myModal .thumbnail>img {
+    border-radius: 100%;
+}
+
+#myModal .modal-dialog {
+    width:  300px;
+    left: 50%;
+    margin-left: -151px;
+    position: absolute;
+}
+#myModal .list-group > div {
+    padding-right: 0;
+}
+#myModal .list-group {
+    margin-bottom: -15px;
+    padding-right:  15px;
+    overflow:  hidden;
+    padding-top: 5px;
+}
+#myModal .thumbnail {
+    margin-bottom:  15px;
+    box-shadow: 0px 0px 3px #aaa;
+    border-radius: 0;
+}
+#myModal .thumbnail:hover, #myModal .thumbnail.active {
+    border: 2px solid #5EAFF9;
+    text-decoration:  none;
+}
+
+
+
+
+

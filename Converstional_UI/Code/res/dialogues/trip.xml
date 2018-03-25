@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:dialog xsi:schemaLocation="http://cto.net/hmi schema1.xsd" xmlns:n="http://cto.net/hmi/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="trip" company="trial" version="1.0">
+    <startTaskName>start</startTaskName>
+    <globalLanguage>en</globalLanguage>
+    <useSODA>true</useSODA>
+    <allowSwitchTasks>true</allowSwitchTasks>
+    <allowOverAnswering>true</allowOverAnswering>
+    <allowDifferentQuestion>true</allowDifferentQuestion>
+    <allowCorrection>false</allowCorrection>
+    <useIntentEngine>true</useIntentEngine>
+    <tasks>
+        <task name="start" label="Initial Task">
+            <selector></selector>
+            <itos>
+                <ito name="welcome">
+                    <AQD>
+                        <type>
+                            <answerType>open_ended</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>How may I help you? | What can I do for you?</fallback_question>
+                    <required>true</required>
+                </ito>
+            </itos>
+        </task>
+        <task name="getTripInformation" label="Book ticket">
+            <selector></selector>
+            <itos>
+                <ito name="getDestinationCity" label="City Name">
+                    <AQD>
+                        <type>
+                            <answerType>sys.location.city</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>where do you want to go?|what city do you want to travel?</fallback_question>
+                    <required>true</required>
+                </ito>
+                <ito name="getNumberOfPersons" label="No of persons">
+                    <AQD>
+                        <type>
+                            <answerType>sys.number.scale</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>for how many persons?</fallback_question>
+                    <required>true</required>
+                </ito>
+                <ito name="getStartDate" label="Start Date">
+                    <AQD>
+                        <type>
+                            <answerType>sys.temporal.date</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>when do you want to leave?</fallback_question>
+                    <required>true</required>
+                </ito>
+                <ito name="getClass" label="Class">
+                    <AQD>
+                        <type>
+                            <answerType>custom.item_1</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>which class do you want to travel?</fallback_question>
+                    <required>true</required>
+                </ito>
+            </itos>
+            <action>
+                <groovyAction>
+                    <returnAnswer>true</returnAnswer>
+                    <utteranceTemplate>Hey %loginUser_ , this trip to %getDestinationCity costs #price Dollars.</utteranceTemplate>
+                    <code><![CDATA[
+                            executionResults.put("price","255")
+                            ]]>
+                    </code>
+                </groovyAction>
+            </action>
+        </task>
+        <task name="getWeatherInformation" label="Weather information">
+            <selector></selector>
+            <itos>
+                <ito name="getDestinationCity" label="Weather information">
+                    <AQD>
+                        <type>
+                            <answerType>sys.location.city</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>for which city do you want to know the weather?</fallback_question>
+                    <required>true</required>
+                    <useContext>true</useContext>
+                    <clearContext>true</clearContext>
+                </ito>
+            </itos>
+            <action>
+                <httpAction>
+                    <returnAnswer>true</returnAnswer>
+                    <utteranceTemplate>The temperature in %getDestinationCity is #result degrees.</utteranceTemplate>
+                    <method>get</method>
+                    <params>q=%getDestinationCity&amp;mode=xml&amp;units=metric&amp;APPID=706120eb0f11f2ebf8584dadb9bad3d6</params>
+                    <url>http://api.openweathermap.org/data/2.5/weather</url>
+                    <xpath>/current/temperature/@value</xpath>
+                    <jpath></jpath>
+                </httpAction>
+            </action>
+            <followup>
+                <ito name="anotherOne" label="Another City">
+                    <AQD>
+                        <type>
+                            <answerType>sys.decision</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>do you want to know about other cities?</fallback_question>
+                    <required>true</required>
+                </ito>
+                <answerMapping>
+                    <item key="YES">getWeatherInformation</item>
+                </answerMapping>
+            </followup>
+        </task>
+        <task name="getWikipediaCityInfo" label="City information">
+            <selector></selector>
+            <itos>
+                <ito name="getWikiCity" label="City Name">
+                    <AQD>
+                        <type>
+                            <answerType>sys.location.city</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>what city do you want to know more about?</fallback_question>
+                    <required>true</required>
+                </ito>
+            </itos>
+            <action>
+                <httpAction>
+                    <returnAnswer>true</returnAnswer>
+                    <utteranceTemplate>#result</utteranceTemplate>
+                    <method>get</method>
+                    <params>format=json&amp;action=query&amp;prop=extracts&amp;explaintext&amp;exsentences=1&amp;titles=%getWikiCity</params>
+                    <url>http://en.wikipedia.org/w/api.php</url>
+                    <xpath></xpath>
+                    <jpath>$..extract</jpath>
+                </httpAction>
+            </action>
+            <followup>
+                <ito name="anotherOne" label="Another City">
+                    <AQD>
+                        <type>
+                            <answerType>sys.decision</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>do you want to know about other cities?</fallback_question>
+                    <required>true</required>
+                </ito>
+                <answerMapping>
+                    <item key="YES">getWikipediaCityInfo</item>
+                </answerMapping>
+            </followup>
+        </task>
+        <task name="cancelTask" label="Cancel">
+            <selector></selector>
+            <followup>
+                <ito name="cancelDecision" label="Option">
+                    <AQD>
+                        <type>
+                            <answerType>sys.decision</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>Do you want to cancel the task?</fallback_question>
+                    <required>true</required>
+                </ito>
+                <answerMapping>
+                    <item key="YES">start</item>
+                </answerMapping>
+            </followup>
+            <action>
+                <groovyAction>
+                    <returnAnswer>false</returnAnswer>
+                    <utteranceTemplate></utteranceTemplate>
+                    <code></code>
+                </groovyAction>
+            </action>
+        </task>
+        <task name="handoverTask" >
+            <selector></selector>
+            <itos>
+                <ito name="handoverDecision" label="Option">
+                    <AQD>
+                        <type>
+                            <answerType>sys.decision</answerType>
+                        </type>
+                    </AQD>
+                    <fallback_question>It seems you need some help, say yes to chat with our agent or to restart, say no to continue ?</fallback_question>
+                    <required>true</required>
+                </ito>
+            </itos>
+            <action>
+                <groovyAction>
+                    <resultMappings>
+                        <resultMapping>
+                            <message>OK, We will continue... </message>
+                            <redirectToTask></redirectToTask>
+                            <resultValue>2</resultValue>
+                            <resultVarName>action</resultVarName>
+                        </resultMapping>
+                        <resultMapping>
+                            <message>OK, We will restart... </message>
+                            <redirectToTask>start</redirectToTask>
+                            <resultValue>1</resultValue>
+                            <resultVarName>action</resultVarName>
+                        </resultMapping>
+                    </resultMappings>
+                    <returnAnswer>true</returnAnswer>
+                    <utteranceTemplate></utteranceTemplate>
+                    <code><![CDATA[
+					String option=new String(frame.get("handoverDecision"));
+					Integer action = new Integer(1);
+                    if (option.matches("(?i)^.*?\\b(yes|ok)\\b.*?")){
+				        action = 1;
+                    }
+				    else if (option.matches("(?i)^.*?\\b(no|cancel)\\b.*?")){
+				        action = 2;
+                    }       
+                    executionResults.put("action",action.toString());
+					]]>
+                    </code>
+                </groovyAction>
+            </action>
+        </task>
+    </tasks>
+</n:dialog>
