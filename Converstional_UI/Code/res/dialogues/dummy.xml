@@ -24,7 +24,7 @@
                      <answerType>open_ended</answerType>
                   </type>
                </AQD>
-               <fallback_question>How may I help you?</fallback_question>
+               <fallbackQuestion>How may I help you?</fallbackQuestion>
                <required>true</required>
             </ito>
          </itos>
@@ -45,7 +45,7 @@
                      <answerType>sys.location.city</answerType>
                   </type>
                </AQD>
-               <fallback_question>where do you want to start?</fallback_question>
+               <fallbackQuestion>where do you want to start?</fallbackQuestion>
                <required>true</required>
 			</ito>
             <ito name="getDestinationCity">
@@ -54,7 +54,7 @@
                      <answerType>sys.location.city</answerType>
                   </type>
                </AQD>
-               <fallback_question>where do you want to go?</fallback_question>
+               <fallbackQuestion>where do you want to go?</fallbackQuestion>
                <required>true</required>
             </ito>
             <ito name="getNumberOfPersons">
@@ -63,7 +63,7 @@
                      <answerType>sys.number</answerType>
                   </type>
                </AQD>
-               <fallback_question>for how many persons?</fallback_question>
+               <fallbackQuestion>for how many persons?</fallbackQuestion>
                <required>true</required>
             </ito>
             <ito name="getStartDate">
@@ -72,7 +72,7 @@
                      <answerType>sys.temporal.date</answerType>
                   </type>
                </AQD>
-               <fallback_question>when do you want to leave?</fallback_question>
+               <fallbackQuestion>when do you want to leave?</fallbackQuestion>
                <required>true</required>
             </ito>
             <ito name="getEndDate">
@@ -81,7 +81,7 @@
                      <answerType>sys.temporal.date</answerType>
                   </type>
                </AQD>
-               <fallback_question>when do you want to come back?</fallback_question>
+               <fallbackQuestion>when do you want to come back?</fallbackQuestion>
                <required>true</required>
             </ito>
          </itos>
@@ -106,7 +106,7 @@
                      <answerType>sys.location.city</answerType>
                   </type>
                </AQD>
-               <fallback_question>for which city do you want to know the weather?</fallback_question>
+               <fallbackQuestion>for which city do you want to know the weather?</fallbackQuestion>
                <required>true</required>
 			   <useContext>true</useContext>
             </ito>
@@ -137,7 +137,7 @@
                      <answerType>sys.location.city</answerType>
                   </type>
                </AQD>
-               <fallback_question>what city do you want to know more about?</fallback_question>
+               <fallbackQuestion>what city do you want to know more about?</fallbackQuestion>
                <required>true</required>
             </ito>
          </itos>
@@ -159,7 +159,7 @@
                      <answerType>sys.decision</answerType>
                   </type>
                </AQD>
-               <fallback_question>do you want to know about other cities?</fallback_question>
+               <fallbackQuestion>do you want to know about other cities?</fallbackQuestion>
                <required>true</required>
             </ito>
             <answerMapping>
@@ -185,7 +185,7 @@
                      <answerType>sys.decision</answerType>
                   </type>
                </AQD>
-               <fallback_question>Do you want to cancel the task?</fallback_question>
+               <fallbackQuestion>Do you want to cancel the task?</fallbackQuestion>
                <required>true</required>
             </ito>
             <answerMapping>

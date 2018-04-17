@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 
-<category><pattern>NLGFILLen</pattern><template>   <random>   <li>And</li>  <li> </li> <li>Well,</li>      <li>OK,</li>      <li>Tell me,</li>   <li>Now tell me,</li>   <li>Can you please tell me,</li>  <li>Can you now please tell me,</li>    <li>Please tell me,</li>  <li>Now please tell me,</li>    </random>    </template></category>
-<category><pattern>NLGFILLhi</pattern><template>   <random>   <li>और</li>  <li> </li> <li>ठीक,</li>   <li>अच्छा,</li>	<li>मुझे बताओ,</li>   <li>अब मुझे बताओ,</li>      <li>क्या आप मुझे बता सकते हैं,</li>   <li>अब आप मुझे बताओ,</li>  <li>अब बोलो,</li> <li>कृपया क्या आप मुझे बता सकते हैं,</li>   </random>    </template></category> 
+<category><pattern>NLGFILL_en</pattern><template>   <random>   <li>And</li>  <li> </li> <li>Well,</li>      <li>OK,</li>      <li>Tell me,</li>   <li>Now tell me,</li>   <li>Can you please tell me,</li>  <li>Can you now please tell me,</li>    <li>Please tell me,</li>  <li>Now please tell me,</li>    </random>    </template></category>
+<category><pattern>NLGFILL_hi</pattern><template>   <random>   <li>और</li>  <li> </li> <li>ठीक,</li>   <li>अच्छा,</li>	<li>मुझे बताओ,</li>   <li>अब मुझे बताओ,</li>      <li>क्या आप मुझे बता सकते हैं,</li>   <li>अब आप मुझे बताओ,</li>  <li>अब बोलो,</li> <li>कृपया क्या आप मुझे बता सकते हैं,</li>   </random>    </template></category>
+<category><pattern>NLGFILL_da</pattern><template>   <random>   <li>og</li>  <li> </li> <li>godt,</li>      <li>Okay,</li>      <li>Fortæl mig,</li>   <li>Fortæl mig nu,</li>   <li>Kan du venligst fortælle mig,</li>  <li>Kan du nu fortælle mig det,</li>    <li>Fortæl mig venligst,</li>   </random>    </template></category>
+<category><pattern>NLGFILL_sv</pattern><template>   <random>   <li>och</li>  <li> </li> <li>väl,</li>      <li>OK,</li>      <li>Berätta för mig,</li>   <li>säg nu,</li>   <li>kan du snälla berätta för mig,</li>  <li>kan du nu berätta för mig,</li>    <li>snälla berätta för mig,</li>   </random>    </template></category>
+<category><pattern>NLGFILL_nl</pattern><template>   <random>   <li>en</li>  <li> </li> <li>goed,</li>      <li>OK,</li>      <li>vertel het me,</li>   <li>vertel het mij nu,</li>   <li>kan je me alsjeblieft vertellen,</li>  <li>kan je me nu alsjeblieft vertellen,</li>    <li>vertel me alsjeblieft,</li>   </random>    </template></category>
+
 </aiml>
