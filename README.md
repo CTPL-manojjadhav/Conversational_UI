@@ -67,7 +67,7 @@ Go through the detailed document located [here](https://github.com/hmi-digital/C
 
 Contact
 -------
-dev.hmilab@gmail.com
+helpdesk.hmilab@gmail.com
 
 
 
