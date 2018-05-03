@@ -16,7 +16,7 @@ The arrival of chatbots have opened up new realms of the customer engagement. So
 Overview
 ------------
 This repo provides you the chatbot engine that you can download and customize to your business needs.
-Documents can be found at [this](https://github.com/hmi-digital/Converstional_UI/tree/master/Converstional_UI/Documents) location. Quick Start Guide is easy way to get started.
+Documents can be found at [this](https://github.com/hmi-digital/Conversational_UI/tree/master/Conversational_UI/Documents) location. Quick Start Guide is easy way to get started.
 
 Prerequisite
 ------------
