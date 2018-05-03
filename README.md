@@ -1,4 +1,4 @@
-## Conversational User Interface(UI) - The next interaction paradigm
+## [Conversational User Interface(UI)](https://hmi-digital.github.io/) - The next interaction paradigm
 **Conversational UI** is evolving into the interface of future . It gives user a privilege of interacting with computers more naturally than they currently do.
 
 Conversational UI takes two forms — 
@@ -35,7 +35,7 @@ import nltk
 ```
 Usage
 -----
-+ Clone or download the Conversational UI repo to D:/HMI folder (or your prefered location)
++ Clone or download the Conversational UI repo and copy files from Releases to D:/HMI folder (or your prefered location)
 + Ensure that you have following folder structure
     + lib
     + res
