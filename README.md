@@ -1,4 +1,4 @@
-## Conversational User Interface(UI) - The next interaction paradigm
+## [Conversational User Interface(UI)](https://hmi-digital.github.io/) - The next interaction paradigm
 **Conversational UI** is evolving into the interface of future . It gives user a privilege of interacting with computers more naturally than they currently do.
 
 Conversational UI takes two forms — 
@@ -16,7 +16,7 @@ The arrival of chatbots have opened up new realms of the customer engagement. So
 Overview
 ------------
 This repo provides you the chatbot engine that you can download and customize to your business needs.
-Documents can be found at [this](https://github.com/hmi-digital/Converstional_UI/tree/master/Converstional_UI/Documents) location. Quick Start Guide is easy way to get started.
+Documents can be found at [this](https://github.com/hmi-digital/Conversational_UI/tree/master/Conversational_UI/Documents) location. Quick Start Guide is easy way to get started.
 
 Prerequisite
 ------------
@@ -35,7 +35,7 @@ import nltk
 ```
 Usage
 -----
-+ Clone or download the Conversational UI repo to D:/HMI folder (or your prefered location)
++ Clone or download the Conversational UI repo and copy files from Releases to D:/HMI folder (or your prefered location)
 + Ensure that you have following folder structure
     + lib
     + res
@@ -63,7 +63,7 @@ $ java -jar hmi.jar -i rest –p 8080 -r trip
 + Bot engine is now ready to interact at port 8080 and uses inbuilt jetty server
 + Go to chrome browser and enter URL - https://\<Your Machine IP\>:8080
   
-Go through the detailed document located [here](https://github.com/hmi-digital/Converstional_UI/blob/master/Converstional_UI/Documents/Bot-Overview-V1.04.pdf) to understand the different features and functionalities of BOT platform
+Go through the detailed document located [here](https://github.com/hmi-digital/Conversational_UI/blob/master/Conversational_UI/Documents/Bot-Overview-V1.04.pdf) to understand the different features and functionalities of BOT platform
 
 Contact
 -------
