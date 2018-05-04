@@ -57,7 +57,7 @@ usage: bot [-f <arg>] [-h] [-i <console, rest>] [-p <arg>] [-r <arg>] [-s
  -s,--store <arg>                 load dialogue (by name) from internal
                                   store, e.g. -s dialogue1
                                   
-$ java -jar hmi.jar -i rest –p 8080 -r trip
+$ java -jar hmi.jar -i rest –p 8080 -r trip_en
 ```
 + Above command will run a sample trip booking use case ( at D:\HMI\res\dialogues folder)
 + Bot engine is now ready to interact at port 8080 and uses inbuilt jetty server
