@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from module import hindiNLP
 def stemTokenize(text):
  t=hindiNLP.Processor(text)

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from nltk import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.stem import SnowballStemmer

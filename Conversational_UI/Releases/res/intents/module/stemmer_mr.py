@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from module import marathiNLP
 def stemTokenize(text):
  t=marathiNLP.Processor(text)
