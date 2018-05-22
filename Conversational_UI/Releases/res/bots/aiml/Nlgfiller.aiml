@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-
+<category><pattern>NLGFILL_ar</pattern><template>   <random>   <li>و</li>  <li> </li> <li>حسنا,</li>      <li>حسنا,</li>      <li>أخبرنى,</li>   <li>الآن أخبرني,</li>   <li>هل يمكنك إخباري من فضلك,</li>  <li>هل يمكن أن تخبرني الآن,</li>    <li>أرجوك قل لي,</li>  <li>الآن من فضلك قل لي,</li>    </random>    </template></category>
 <category><pattern>NLGFILL_en</pattern><template>   <random>   <li>And</li>  <li> </li> <li>Well,</li>      <li>OK,</li>      <li>Tell me,</li>   <li>Now tell me,</li>   <li>Can you please tell me,</li>  <li>Can you now please tell me,</li>    <li>Please tell me,</li>  <li>Now please tell me,</li>    </random>    </template></category>
 <category><pattern>NLGFILL_hi</pattern><template>   <random>   <li>और</li>  <li> </li> <li>ठीक,</li>   <li>अच्छा,</li>	<li>मुझे बताओ,</li>   <li>अब मुझे बताओ,</li>      <li>क्या आप मुझे बता सकते हैं,</li>   <li>अब आप मुझे बताओ,</li>  <li>अब बोलो,</li> <li>कृपया क्या आप मुझे बता सकते हैं,</li>   </random>    </template></category>
 <category><pattern>NLGFILL_da</pattern><template>   <random>   <li>og</li>  <li> </li> <li>godt,</li>      <li>Okay,</li>      <li>Fortæl mig,</li>   <li>Fortæl mig nu,</li>   <li>Kan du venligst fortælle mig,</li>  <li>Kan du nu fortælle mig det,</li>    <li>Fortæl mig venligst,</li>   </random>    </template></category>

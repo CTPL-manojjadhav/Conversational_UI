@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 import os
 import glob
 import sys
 import re
+import codecs
 import _pickle as cPickle
 from nltk.stem import SnowballStemmer
 from nltk import word_tokenize
@@ -18,11 +20,10 @@ trainLSA=cPickle.load(open(picklePath+'trainLSA.m','rb'))
 stopwordFile=os.path.join(scriptDir,'..','..','..','dictionary','stopwords_en.txt')
 arrayWords=[]
 stopWords=[]
-sList=[line.rstrip('\n')for line in open((stopwordFile),'r+')]
+sList=[line.rstrip('\n')for line in codecs.open((stopwordFile),'r+','utf-8')]
 for line in sList:
  if line!="":
-  words=line.split("=")[1]
-  arrayWords.append(words.split(','))
+  arrayWords.append(line.split(','))
 for a_word in arrayWords:
  for s_word in a_word:
   if(re.sub(' ','',s_word))!="":
@@ -83,7 +84,7 @@ def processUtterance(utter):
  response={'class_1':orderedIntents[0],'score_1':"{:.2f}".format(scoreList[orderedIntents[0]])}
  return response
 synonymFile=os.path.join(scriptDir,'..','..','..','dictionary','synonyms_en.txt')
-with open(synonymFile,'r')as rawSynonymsFileobj:
+with codecs.open(synonymFile,'r','utf-8')as rawSynonymsFileobj:
  rawSynonyms=rawSynonymsFileobj.read()
  rawSynonyms=rawSynonyms.split('\n')
 synonymsList=[]

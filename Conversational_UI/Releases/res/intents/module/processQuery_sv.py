@@ -22,8 +22,7 @@ stopWords=[]
 sList=[line.rstrip('\n')for line in codecs.open(stopwordFile,'r','utf-8')]
 for line in sList:
  if line!="":
-  words=line.split("=")[1]
-  arrayWords.append(words.split(','))
+  arrayWords.append(line.split(','))
 for a_word in arrayWords:
  for s_word in a_word:
   if(re.sub(' ','',s_word))!="":

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import sys
 import json
@@ -16,7 +17,7 @@ scriptDir=os.path.dirname(__file__)
 fileData=os.path.join(scriptDir,'data',domain+'.json')
 utterance=[]
 intent=[]
-with open(fileData,'r')as dataFile:
+with codecs.open(fileData,'r','utf-8')as dataFile:
  data=json.load(dataFile)
 for nameUtterances in data['classes']:
  for utt in nameUtterances['utterances']:
@@ -29,12 +30,11 @@ print('Number of intents for training:',len(myIntent))
 stopListFile=os.path.join(scriptDir,'..','..','dictionary','stopwords_en.txt')
 arrayWords=[]
 stopWords=[]
-f=open(stopListFile,"r")
+f=codecs.open(stopListFile,'r','utf-8')
 lines=f.read().split("\n")
 for line in lines:
  if line!="":
-  words=line.split("=")[1]
-  arrayWords.append(words.split(','))
+  arrayWords.append(line.split(','))
 for a_word in arrayWords:
  for s_word in a_word:
   if(re.sub(' ','',s_word))!="":

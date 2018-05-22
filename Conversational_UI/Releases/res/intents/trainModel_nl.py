@@ -18,7 +18,7 @@ scriptDir=os.path.dirname(__file__)
 fileData=os.path.join(scriptDir,'data',domain+'_nl.json')
 utterance=[]
 intent=[]
-with open(fileData,'r')as dataFile:
+with codecs.open(fileData,'r','utf-8')as dataFile:
  data=json.load(dataFile)
 for nameUtterances in data['tasks']:
  for utt in nameUtterances['utterances']:
@@ -35,15 +35,14 @@ f=codecs.open(stopListFile,'r','utf-8')
 lines=f.read().split("\n")
 for line in lines:
  if line!="":
-  words=line.split("=")[1]
-  arrayWords.append(words.split(','))
+  arrayWords.append(line.split(','))
 for a_word in arrayWords:
  for s_word in a_word:
   if(re.sub(' ','',s_word))!="":
    stopWords.append(s_word)
 extraStopWords=set(stopWords)
 stops=set(stopwords.words('dutch'))|extraStopWords
-tfidfVec=TfidfVectorizer(utterance,decode_error='ignore',stop_words=stops,ngram_range=(1,5),tokenizer=stemmer_nl.stemTokenize_2)
+tfidfVec=TfidfVectorizer(utterance,decode_error='ignore',stop_words=stops,ngram_range=(1,5),tokenizer=stemmer_nl.stemTokenize_1)
 trainsetIdfVectorizer=tfidfVec.fit_transform(utterance).toarray()
 vLength=len(trainsetIdfVectorizer[1])
 nDimension=vectorDimension
