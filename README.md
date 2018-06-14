@@ -63,7 +63,7 @@ $ java -jar hmi.jar -i rest –p 8080 -r trip_en
 + Bot engine is now ready to interact at port 8080 and uses inbuilt jetty server
 + Go to chrome browser and enter URL - https://\<Your Machine IP\>:8080
   
-Go through the detailed document located [here](https://github.com/hmi-digital/Conversational_UI/blob/master/Conversational_UI/Documents/Bot-Overview-V1.04.pdf) to understand the different features and functionalities of BOT platform
+Go through the detailed document located [here](https://github.com/hmi-digital/Conversational_UI/tree/master/Conversational_UI/Documents) to understand the different features and functionalities of BOT platform
 
 Contact
 -------
