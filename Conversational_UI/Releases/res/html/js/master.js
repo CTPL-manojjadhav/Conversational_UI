@@ -197,6 +197,7 @@ function submit(userUtteranceFormVal, userUtteranceTextareaVal) {
                     userUtteranceContent = '<li class="mar-btm userUtterance"><div class="media-body pad-hor speech-right"><div class="speech"><p id="userUtteranceValue">' + userUtteranceValNew + '</p><p class="speech-time"><i class="fa fa-clock-o fa-fw"></i>' + currentTime() + '</p></div></div></li>';
 
                     /*---------------------- Icard Section Start ----------------*/
+                    var checkObjTypeSlider = '';
                     //console.log(data);
                     if (!data.iCard == 0) {
                         //alert('data icard not equal to 0');
@@ -271,6 +272,35 @@ function submit(userUtteranceFormVal, userUtteranceTextareaVal) {
                                     formTypeElement = '<select id="' + objVal.name + '" class="form-control ' + isActive + '" data-entity-type="' + objVal.entityType + '">' + createListOption + '</select>'
                                 }
                                 /*------------- Check if field type is List End----------------*/
+                                /*------------- Check if field type is Slider Start----------------*/
+                                else if (objVal.type === "slider") {
+                                    var sliderVal = objVal.elements;
+                                    var selectedChk = "";
+                                    var arraySliderVal = sliderVal.split(',');
+                                    var minValue = ''
+                                    var maxValue = '';
+                                    var maxValue = '';
+                                    var stepVal = '';
+                                    var defaultVal = '';
+                                    $.each(arraySliderVal, function (i, arrListVal) {
+                                        if (i == 0) {
+                                            minValue = arrListVal;
+                                        } else if (i == 1) {
+                                            maxValue = arrListVal;
+                                        } else if (i == 2) {
+                                            stepVal = arrListVal;
+                                        } else if (i == 3) {
+                                            defaultVal = arrListVal;
+                                        }
+                                        console.log(i + '...' + arrListVal);
+                                        //debugger;
+                                        //debugger;
+                                    });
+                                    formTypeElement = ' <input type="range" min="' + minValue + '" max="' + maxValue + '" step="' + stepVal + '" value="' + defaultVal + '" data-rangeslider> <output class="form-control"></output>'
+
+                                    checkObjTypeSlider = true;
+                                }
+                                /*------------- Check if field type is slider End----------------*/
                                 /*------------- Check if field type is Date Start----------------*/
                                 else if (objVal.type === "date") {
                                     formTypeElement = '<input type="text" class="form-control datepicker ' + isActive + '" id="' + objVal.name + '" ' + isActive + ' value="' + objVal.value + '" data-entity-type="' + objVal.entityType + '">'
@@ -405,7 +435,42 @@ function submit(userUtteranceFormVal, userUtteranceTextareaVal) {
                     } else {
                         //console.log('data card is 0 or empty');
                     }
+                    /*---------------- Like dislike Code Start --------------------*/
+                    var likeDislikeFeedback = '';
+                    if (!data.iCard.feddback == 0) {
 
+                        if (data.iCard.feddback.isVisible == "true") {
+                            likeDislikeFeedback = '<li class="mar-btm likeDislike"><div id="likeDislike" class="panel panel-default"><div class="panel-footer"><span class="pull-right"> <i id="like1" class="glyphicon glyphicon-thumbs-up"></i> <div id="like1-bs3">' + data.iCard.feddback.likes + '</div> <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike1-bs3">' + data.iCard.feddback.dislikes + '</div></span> </div> </div></li>'
+                        } else {
+                            //alert('feedback not visible..');
+                            $("#likeDislike").remove();
+                        }
+                    } else {
+                        //alert('no feedback..')
+                        $("#likeDislike").remove();
+                    }
+
+                    //Append Like Dislike..
+                    $("#utterance").append(likeDislikeFeedback).fadeIn(600);
+
+                    // like click function  
+                    $('i.glyphicon-thumbs-up').click(function () {
+                        var locationLike = locationInt + '/like';
+                        $.post(locationLike, function (data, status) {
+                            console.log(data);
+                            $("#likeDislike").parent().fadeOut(600);
+                        });
+                    });
+                    //  dislike click function 
+                    $('i.glyphicon-thumbs-down').click(function () {
+                        var locationDisLike = locationInt + '/dislike';
+                        $.post(locationDisLike, function (data, status) {
+                            console.log(data);
+                            $("#likeDislike").parent().fadeOut(600);
+                        });
+                    });
+
+                    /*---------------- Like dislike Code End --------------------*/
                     /*---------------------- Icard Section End ----------------*/
 
                     /*---------- info Section Start ----------------*/
@@ -453,7 +518,9 @@ function submit(userUtteranceFormVal, userUtteranceTextareaVal) {
                         $("#utterance").append(userUtteranceContent).fadeIn(600);
                         $("#utterance").append(systemUtteranceContentResponse).fadeIn(600);
 
-
+                        //Append Like Dislike..
+                        $("#utterance").append(likeDislikeFeedback).fadeIn(600);
+                        
                         // Add infor slider data if available.
                         $("#utterance").append(infoSliderData).fadeIn(600);
                         //Taks list form data append;
@@ -462,6 +529,10 @@ function submit(userUtteranceFormVal, userUtteranceTextareaVal) {
                         $("#utterance").append(entitiesFormData).fadeIn(600);
                         //console.log(iCardDataResponse);
 
+
+                        if (checkObjTypeSlider == true) {
+                            fnSlider();
+                        }
 
                         //last card removed
                         $('#utterance').find('.card-1:not(:last)').remove();

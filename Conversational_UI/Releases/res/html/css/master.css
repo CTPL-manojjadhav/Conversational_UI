@@ -186,6 +186,9 @@ a:hover {
     /* padding-bottom:  10px;*/
 }
 
+#header .lima-home-logo {
+    float: left;
+}
 
 #header h3 {
     font-size: 1.3em;
@@ -798,6 +801,28 @@ a:hover {
     background-color: #555;
 }
 
+.lima-logo {
+    text-align: center;
+}
+
+.lima-logo img {
+    max-width: 60px;
+    width: 100%;
+    min-width: 46px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*------------ Loader ----------------------*/
 
 #loading,
@@ -1340,12 +1365,35 @@ a:hover {
     position: fixed;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*Native BootStrap Hack*/
 
 .sidebar .list-group-item:last-child,
 .sidebar .list-group-item:first-child {
     border-radius: 0px;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*------------- Sidebar CSS End here ----------------------*/
@@ -1398,7 +1446,6 @@ a:hover {
     margin: 10px 0 10px 0;
     display: block;
     color: #004c7e;
-    text-align: center;
 }
 
 .section-title {
@@ -1868,6 +1915,14 @@ a:hover {
 
 
 /*---------- New Header start-----------------*/
+
+.lima-bot-logo {
+    float: left;
+    /* width: 80%; */
+    width: 60px;
+    margin: 4px 10px 0 8px;
+    /* margin-top: 8px;*/
+}
 
 .panel-heading h5 {
     color: aliceblue;
@@ -2829,3 +2884,58 @@ ul.img-label-list li label {
 .card-btn-holder .col-xs-7 {
     padding-right:  0;
 }
+
+
+
+/* like dislike css start here */
+
+.panel .panel-footer { padding: 8px !important; background-color: #f9f9f9 !important; border-bottom-right-radius: 0 !important; border-bottom-left-radius: 0 !important; }	
+.panel .panel-footer h4 { display: inline; font: 400 normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #34495e margin: 0 !important; padding: 0 !important; }
+.panel .panel-footer i.glyphicon { display: inline; font-size: 1.125em; cursor: pointer; }
+.panel .panel-footer i.glyphicon-thumbs-up { color: #1abc9c; }
+.panel .panel-footer i.glyphicon-thumbs-down { color: #e74c3c; padding-left: 5px; }
+.panel .panel-footer div { width: 15px; display: inline; font: 300 normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #34495e; text-align: center; background-color: transparent !important; border: none !important; }	
+
+
+#likeDislike {
+    border: 0 !important;
+    box-shadow: 0 0 0;
+}
+#likeDislike .panel-footer {
+    overflow: hidden;
+    margin-bottom: 0;
+    border-radius: 9px !important;
+    width: 78%;    
+
+    margin-left: 9px;
+    margin-top: -22px;
+
+    border-top: 0;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.nano-content li.likeDislike {
+    overflow: visible;
+}
+
+#likeDislike .panel-footer i.glyphicon 
+{
+    position: relative;
+    top: 3px;
+}
+
+#likeDislike .panel-footer i.glyphicon-thumbs-up:hover,
+#likeDislike .panel-footer i.glyphicon-thumbs-up:active {
+    color: #3ecc3e;
+}
+#likeDislike .panel-footer i.glyphicon-thumbs-down:hover,
+#likeDislike .panel-footer i.glyphicon-thumbs-down:active {
+    color: #ff1800;
+}
+
+#likeDislike .panel .panel-footer div {
+    font: 300 normal 1em "Roboto",Arial,Verdana,sans-serif;
+}
+
+/* like dislike css End here */
