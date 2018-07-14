@@ -23,6 +23,25 @@
                     <required>true</required>
                 </ito>
             </itos>
+			<action>
+				<groovyAction>
+					<resultMappings>
+						<resultMapping>
+							<message/>
+							<redirectToTask>exitTask</redirectToTask>
+							<resultValue>1</resultValue>
+							<resultVarName>action</resultVarName>
+						</resultMapping>
+					</resultMappings>
+					<returnAnswer>true</returnAnswer>
+					<utteranceTemplate></utteranceTemplate>
+					<code>
+						<![CDATA[					
+						executionResults.put("action","1");
+						]]>
+					</code>
+				</groovyAction>
+			</action>
         </task>
         <task name="getTripInformation" label="تذكرة الكتاب">
             <selector></selector>
@@ -256,5 +275,30 @@
                 </groovyAction>
             </action>
         </task>
+		<!--#DO NOT CHANGE System Task. Invoked whenever user says bye , bye bye or exit at start task -->
+		<task name="exitTask">
+			<selector></selector>
+			<followup>
+				<ito name="LogoutDecision" label="">
+					<AQD>
+						<type>
+							<answerType>sys.decision</answerType>
+						</type>
+					</AQD>
+					<fallbackQuestion>هل ترغب بالخروج ؟</fallbackQuestion>
+					<required>true</required>
+				</ito>
+				<answerMapping>
+					<item key="NO">start</item>
+				</answerMapping>
+			</followup>
+			<action>
+				<groovyAction>
+					<returnAnswer>false</returnAnswer>
+					<utteranceTemplate></utteranceTemplate>
+					<code></code>
+				</groovyAction>
+			</action>
+		</task>
     </tasks>
 </n:dialog>
