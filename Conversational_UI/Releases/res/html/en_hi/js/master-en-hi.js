@@ -629,10 +629,10 @@ function fn_icard(data) {
     /*---------------- Card Entity list Code End --------------------*/
     /*---------------- Like dislike Code Start --------------------*/
     var likeDislikeFeedback = '';
-    if (!data.iCard.feddback == 0) {
+    if (!data.iCard.feedback == 0) {
        
-        if (data.iCard.feddback.isVisible == "true") {
-            likeDislikeFeedback = '<li class="mar-btm likeDislike"><div id="likeDislike" class="panel panel-default"><div class="panel-footer"><span class="pull-right"> <i id="like1" class="glyphicon glyphicon-thumbs-up"></i> <div id="like1-bs3">' + data.iCard.feddback.likes + '</div> <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike1-bs3">' + data.iCard.feddback.dislikes + '</div></span> </div> </div></li>'
+        if (data.iCard.feedback.isVisible == "true") {
+            likeDislikeFeedback = '<li class="mar-btm likeDislike"><div id="likeDislike" class="panel panel-default"><div class="panel-footer"><span class="pull-right"> <i id="like1" class="glyphicon glyphicon-thumbs-up"></i> <div id="like1-bs3">' + data.iCard.feedback.likes + '</div> <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike1-bs3">' + data.iCard.feedback.dislikes + '</div></span> </div> </div></li>'
         } else {
             //alert('feedback not visible..');
             $("#likeDislike").remove();

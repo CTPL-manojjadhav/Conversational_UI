@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<n:dialog xsi:schemaLocation="http://cto.net/hmi schema1.xsd" xmlns:n="http://cto.net/hmi/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="trip" company="ABCCorp" version="1.0">
+<n:dialog xsi:schemaLocation="http://cto.net/hmi schema1.xsd" xmlns:n="http://cto.net/hmi/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="trip" company="trial" version="1.0">
 	<startTaskName>start</startTaskName>
 	<globalLanguage>en</globalLanguage>
 	<useSODA>true</useSODA>
