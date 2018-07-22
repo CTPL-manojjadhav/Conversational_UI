@@ -8,6 +8,7 @@
 	<allowDifferentQuestion>true</allowDifferentQuestion>
 	<allowCorrection>false</allowCorrection>
 	<useIntentEngine>true</useIntentEngine>
+	<failureAttempts>2</failureAttempts>
 	<tasks>
 		<!--#DO NOT CHANGE System Task. Acts as a starting task for all the conversations -->
 		<task name="start">
