@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+import warnings
 from module import marathiNLP
+warnings.filterwarnings("ignore")
 def stemTokenize(text):
  t=marathiNLP.Processor(text)
  t.tokenize()

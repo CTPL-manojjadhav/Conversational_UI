@@ -5,9 +5,11 @@ import json
 import re
 import codecs
 import pickle
+import warnings
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import TruncatedSVD
 from module import stemmer_hi
+warnings.filterwarnings("ignore")
 vectorDimension=200
 domain=sys.argv[1]
 scriptDir=os.path.dirname(__file__)

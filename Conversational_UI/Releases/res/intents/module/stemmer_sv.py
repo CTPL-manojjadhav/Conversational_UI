@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+import warnings
 from nltk import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.stem import SnowballStemmer
+warnings.filterwarnings("ignore")
 def stemTokenize_1(text):
  stemmer=SnowballStemmer('swedish')
  return[stemmer.stem(w)for w in word_tokenize(text)]

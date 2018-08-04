@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+import warnings
 from module import hindiNLP
+warnings.filterwarnings("ignore")
 def stemTokenize(text):
  t=hindiNLP.Processor(text)
  t.tokenize()

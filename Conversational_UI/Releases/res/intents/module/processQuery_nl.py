@@ -5,10 +5,12 @@ import sys
 import re
 import codecs
 import _pickle as cPickle
+import warnings
 from nltk.stem import SnowballStemmer
 from nltk import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import linear_kernel
+warnings.filterwarnings("ignore")
 domain=sys.argv[1]
 scriptDir=os.path.dirname(__file__)
 picklePath=os.path.join(scriptDir,'..','model',domain+'_nl_')
