@@ -443,19 +443,20 @@ function submit(userUtteranceFormVal, userUtteranceTextareaVal) {
 					}
 					/*---------------- Like dislike Code Start --------------------*/
 					var likeDislikeFeedback = '';
-					if (!data.iCard.feedback == 0) {
+					if (data.iCard != null) {
+						if (!data.iCard.feedback == 0) {
 
-						if (data.iCard.feedback.isVisible == "true") {
-							likeDislikeFeedback = '<li class="mar-btm likeDislike"><div id="likeDislike" class="panel panel-default"><div class="panel-footer"><span class="pull-right"> <i id="like1" class="glyphicon glyphicon-thumbs-up"></i> <div id="like1-bs3">' + data.iCard.feedback.likes + '</div> <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike1-bs3">' + data.iCard.feedback.dislikes + '</div></span> </div> </div></li>'
+							if (data.iCard.feedback.isVisible == "true") {
+								likeDislikeFeedback = '<li class="mar-btm likeDislike"><div id="likeDislike" class="panel panel-default"><div class="panel-footer"><span class="pull-right"> <i id="like1" class="glyphicon glyphicon-thumbs-up"></i> <div id="like1-bs3">' + data.iCard.feedback.likes + '</div> <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike1-bs3">' + data.iCard.feedback.dislikes + '</div></span> </div> </div></li>'
+							} else {
+								//alert('feedback not visible..');
+								$("#likeDislike").remove();
+							}
 						} else {
-							//alert('feedback not visible..');
+							//alert('no feedback..')
 							$("#likeDislike").remove();
 						}
-					} else {
-						//alert('no feedback..')
-						$("#likeDislike").remove();
 					}
-
 					//Append Like Dislike..
 
 					// like click function  
