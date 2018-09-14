@@ -2,10 +2,12 @@
 import os
 import re
 import sys
-import pickle 
+import pickle
+import warnings
 from sklearn.metrics.pairwise import linear_kernel
 from collections import OrderedDict
 from module import processQuery_da as pq
+warnings.filterwarnings("ignore")
 domain=sys.argv[1]
 userUtterance=sys.argv[2]
 scriptDir=os.path.dirname(__file__)
