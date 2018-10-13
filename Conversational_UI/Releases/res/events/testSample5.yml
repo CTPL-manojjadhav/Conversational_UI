@@ -10,24 +10,24 @@ tasks :
                     label : 'Departure city'
                     required : true
                     answerType: sys.location.city
-                    fallbackQuestion: 'where do you want to go?'
+                    fallbackQuestion: "where do you want to go?"
                 - ito :
                     name : getDate
                     label : 'Departure Date'
                     required : true
                     answerType: sys.temporal.date
-                    fallbackQuestion: 'when do you want to leave?'
+                    fallbackQuestion: "when do you want to leave?"
                 - ito :
                     name : getInfo
                     label : 'Addition Info'
                     required : true
                     answerType: sys.opentext
-                    fallbackQuestion: 'any additional information that you may have?'
+                    fallbackQuestion: "any additional information that you may have?"
             action :
                 type : groovyAction
                 resultMappings :
                     - map :
-                        message : 'Your ticket for %getDepartureCity city is booked. The additional info is %getInfo'
+                        message : "Your ticket for %getDepartureCity city is booked. The additional info is %getInfo"
                         redirectToTask : EVT_getTemprature
                         resultVarName : action
                         # use quotes for key
@@ -44,15 +44,14 @@ tasks :
                     label : 'City Name'
                     required : true
                     answerType: sys.location.city
-                    fallbackQuestion: 'For which city do you want to know the weather?'
+                    fallbackQuestion: "For which city do you want to know the weather?"
             action :
                 type : httpAction
                 returnAnswer :  true
-                utteranceTemplate : 'The temperature in %getCityName is #result degrees.'
+                utteranceTemplate : "The temperature in %getCityName is #result degrees."
                 method : GET
                 params : q=%getCityName&mode=xml&units=metric&APPID=706120eb0f11f2ebf8584dadb9bad3d6
                 url : http://api.openweathermap.org/data/2.5/weather
                 xpath : /current/temperature/@value
                 jpath : null
 ...
-
